@@ -4,7 +4,7 @@ PACKAGE_VERSION = "0.2"
 
 setuptools.setup(
     name='mytoolbox',
-    version='0.2',
+    version='0.3',
     author='Pavlis',
     author_email='pavlis.konecny@gmail.com',
     description='Testing installation of Package',
