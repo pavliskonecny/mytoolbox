@@ -2,7 +2,7 @@ import time
 from datetime import date
 
 
-class My_Time:
+class MyTime:
 
     def __init__(self, round_nr: int):
         self.start_time = None

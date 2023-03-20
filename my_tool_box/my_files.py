@@ -1,7 +1,7 @@
 import os
 import sys
 import json
-from pathlib import Path
+
 
 def read_file(f_name: str) -> str:
     """
@@ -32,17 +32,20 @@ def copy_dir(source_dir: str, destination_dir: str, rewrite: bool = True):
             rmtree(destination_dir)
     copytree(source_dir, destination_dir)
 
+
 def exist_file(file_name: str) -> bool:
     """
     function return bool of existing file
     """
     return os.path.isfile(file_name)
 
+
 def exist_dir(directory_name: str) -> bool:
     """
     function return bool of existing directory
     """
     return os.path.isdir(directory_name)
+
 
 def get_abs_path(file_name: str) -> str:
     """
@@ -85,6 +88,7 @@ def get_cur_dir() -> str:
     # function return temp absolute project folder path
     # """
     # return str(sys._MEIPASS)
+
 
 def make_dir(directory_name: str) -> bool:
     """
