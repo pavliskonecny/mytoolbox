@@ -1,8 +1,10 @@
 import setuptools
 
+PACKAGE_VERSION = "0.1"
+
 setuptools.setup(
     name='mytoolbox',
-    version='0.1',
+    version=PACKAGE_VERSION,
     author='Pavlis',
     author_email='pavlis.konecny@gmail.com',
     description='Testing installation of Package',

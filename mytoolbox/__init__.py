@@ -1,1 +1,5 @@
-__version__ = '0.1'
+from setup import PACKAGE_VERSION
+
+__version__ = PACKAGE_VERSION
+
+
