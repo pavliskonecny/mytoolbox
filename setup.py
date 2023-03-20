@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name='my_tool_box',
-    version='0.0.1',
+    version='0.1',
     author='Pavlis',
     author_email='pavlis.konecny@gmail.com',
     description='Testing installation of Package',
