@@ -4,27 +4,26 @@ import sys
 
 class MyPyInstaller:
     def __init__(self, gui_app: bool, one_file: bool, py_file_name: str = "main.py", exe_file_name: str = "",
-                 icon_name: str = "", add_folder_name: str = ""):
+                 icon_path: str = "", included_folder_path: str = ""):
         """
 
         :param gui_app: False will create console app. True will create GUI app
         :param one_file: True means one exe file. False means folder with necessary files and exe file
         :param py_file_name: Name of main PY file. Default name is "main.py"
         :param exe_file_name: Name of exe file. Default name will be the same as project folder
-        :param icon_name: Path of icon file. Default value means without ico
-        :param add_folder_name: Included folder to exe file. Default value means no folder
+        :param icon_path: Path of icon file. Default value means without ico
+        :param included_folder_path: Included folder to exe file. Default value means no folder
         """
         self.gui_app = gui_app
         self.one_file = one_file
         self.py_file_name = py_file_name
         self.exe_file_name = exe_file_name
         self.add_exe_file_name = (exe_file_name != "")
-        self.icon_name = icon_name
-        self.add_icon = (icon_name != "")
-        self.add_folder_name = add_folder_name
-        self.add_folder = (add_folder_name != "")
+        self.icon_name = icon_path
+        self.add_icon = (icon_path != "")
+        self.add_folder_name = included_folder_path
+        self.add_folder = (included_folder_path != "")
 
-    def start(self):
         print("Start building ...")
         self._make_build()
         print("Build is DONE")
