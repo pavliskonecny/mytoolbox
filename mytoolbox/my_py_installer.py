@@ -4,7 +4,7 @@ import sys
 # ******************************************************
 # CHANGE THIS PARAMETERS AS NEEDED
 py_file_name = 'main.py'
-#py_file_name = 'Examples\\file_test.py'
+# py_file_name = 'Examples\\file_test.py'
 
 add_exe_file_name = True    # False will make exe file name the same like project name folder
 exe_file_name = "Google FIT steps generator"
