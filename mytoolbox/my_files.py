@@ -104,12 +104,6 @@ def get_cur_dir() -> str:
     """
     return os.curdir
 
-    # def get_temp_project_folder_path() -> str:
-    # """
-    # function return temp absolute project folder path
-    # """
-    # return str(sys._MEIPASS)
-
 
 def make_dir(directory_name: str) -> bool:
     """
