@@ -1,6 +1,6 @@
 import setuptools
 
-PACKAGE_VERSION = "0.1"
+PACKAGE_VERSION = "0.2"
 
 setuptools.setup(
     name='mytoolbox',
