@@ -4,7 +4,8 @@ import sys
 
 class MyPyInstaller:
     def __init__(self, gui_app: bool, one_file: bool, py_file_name: str = "main.py", exe_file_name: str = "",
-                 icon_path: str = "", included_folder_path: str = ""):
+                 icon_path: str = "", included_folder_path: str = "", dist_path_folder: str = "",
+                 open_dist_folder: bool = False):
         """
 
         :param gui_app: False will create console app. True will create GUI app
@@ -13,6 +14,8 @@ class MyPyInstaller:
         :param exe_file_name: Name of exe file. Default name will be the same as project folder
         :param icon_path: Path of icon file. Default value means without ico
         :param included_folder_path: Included folder to exe file. Default value means no folder
+        :param dist_path_folder: Folder, where to place exe file. Default value means "dist" folder
+        :param open_dist_folder: If TRUE, distribution folder with exe file will be opened. Default value means no open
         """
         self.gui_app = gui_app
         self.one_file = one_file
@@ -23,11 +26,14 @@ class MyPyInstaller:
         self.add_icon = (icon_path != "")
         self.add_folder_name = included_folder_path
         self.add_folder = (included_folder_path != "")
+        self.dist_path_folder = dist_path_folder
+        self.open_dist_folder = open_dist_folder
 
         print("Start building ...")
         self._make_build()
         print("Build is DONE")
-        self._open_folder()
+        if self.open_dist_folder:
+            self._open_folder()
 
     def _make_build(self):
         project_name = self._get_project_name()
@@ -48,7 +54,11 @@ class MyPyInstaller:
         cmd += " --name " + project_name
         cmd += " --specpath " + project_folder + "\\build\\"    # for spec file
         cmd += " --workpath " + project_folder + "\\build\\"    # for build file
-        cmd += " --distpath " + project_folder + "\\dist\\"     # for distribution exe file
+        
+        if self.dist_path_folder:  # for distribution exe file
+            cmd += " --distpath " + project_folder + "\\" + self.dist_path_folder + "\\"
+        else:
+            cmd += " --distpath " + project_folder + "\\dist\\"
 
         if self.add_icon:
             cmd += " --icon " + project_folder + "\\" + self.icon_name  # --icon MyIcon.ico
